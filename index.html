@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Valentine?</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: #ffb6c1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+    }
+
+    .container {
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 3rem;
+      color: #fff;
+      margin-bottom: 40px;
+    }
+
+    button {
+      font-size: 1.5rem;
+      padding: 15px 40px;
+      margin: 10px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    #yes {
+      background: #ff4d6d;
+      color: white;
+    }
+
+    #no {
+      background: white;
+      color: #ff4d6d;
+      position: absolute;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Will you be my Valentine? 💕</h1>
+  <button id="yes">Yes 💖</button>
+  <button id="no">No 💔</button>
+</div>
+
+<script>
+  const noBtn = document.getElementById("no");
+  const yesBtn = document.getElementById("yes");
+
+  let yesSize = 1.5;
+
+  noBtn.addEventListener("mouseover", () => {
+    const x = Math.random() * (window.innerWidth - 100);
+    const y = Math.random() * (window.innerHeight - 50);
+    noBtn.style.left = `${x}px`;
+    noBtn.style.top = `${y}px`;
+
+    yesSize += 0.2;
+    yesBtn.style.fontSize = `${yesSize}rem`;
+  });
+
+  yesBtn.addEventListener("click", () => {
+    window.location.href = "love.html";
+  });
+</script>
+
+</body>
+</html>
+
+
